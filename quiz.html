@@ -34,24 +34,24 @@
     .ok{color:var(--good)} .no{color:var(--bad)}
     .hidden{display:none}
     code{background:rgba(255,255,255,.09);padding:2px 8px;border-radius:999px}
+    a{color:#b8c7ff;word-break:break-all}
   </style>
 </head>
 <body>
   <div class="wrap">
     <h1>🍻 Pubcrawl – Quiz</h1>
-    <p class="sub">Test-Mode: Mapping sichtbar (Antwort → ergibt Zeichen). Ergebnis muss <b>6H27OkFZYu4</b> sein.</p>
+    <p class="sub">Mapping sichtbar (Antwort → ergibt Zeichen). Erst wenn alles stimmt, erscheint der klickbare Link.</p>
 
     <div class="card" id="quiz">
+      <!-- 11 Fragen = 11 Zeichen im Code -->
 
-      <!-- Q1 -> 6 -->
-      <div class="q">1) [Frage hier einfügen]</div>
-      <label class="opt"><input type="radio" name="q1" value="A" data-out="4"><div><div>A) [Antworttext]</div><div class="map">→ ergibt: <b>4</b></div></div><div class="right"><span class="tag">A</span></div></label>
-      <label class="opt"><input type="radio" name="q1" value="B" data-out="5"><div><div>B) [Antworttext]</div><div class="map">→ ergibt: <b>5</b></div></div><div class="right"><span class="tag">B</span></div></label>
-      <label class="opt"><input type="radio" name="q1" value="C" data-out="6"><div><div>C) [Antworttext]</div><div class="map">→ ergibt: <b>6</b></div></div><div class="right"><span class="tag">C</span></div></label>
+      <div class="q">1) Wie alt ist Nici?</div>
+      <label class="opt"><input type="radio" name="q1" value="A" data-out="4"><div><div>A) 80</div><div class="map">→ ergibt: <b>4</b></div></div><div class="right"><span class="tag">A</span></div></label>
+      <label class="opt"><input type="radio" name="q1" value="B" data-out="5"><div><div>B) 31</div><div class="map">→ ergibt: <b>5</b></div></div><div class="right"><span class="tag">B</span></div></label>
+      <label class="opt"><input type="radio" name="q1" value="C" data-out="6"><div><div>C) 30</div><div class="map">→ ergibt: <b>6</b></div></div><div class="right"><span class="tag">C</span></div></label>
 
       <div class="divider"></div>
 
-      <!-- Q2 -> H -->
       <div class="q">2) [Frage hier einfügen]</div>
       <label class="opt"><input type="radio" name="q2" value="A" data-out="H"><div><div>A) [Antworttext]</div><div class="map">→ ergibt: <b>H</b></div></div><div class="right"><span class="tag">A</span></div></label>
       <label class="opt"><input type="radio" name="q2" value="B" data-out="B"><div><div>B) [Antworttext]</div><div class="map">→ ergibt: <b>B</b></div></div><div class="right"><span class="tag">B</span></div></label>
@@ -59,7 +59,6 @@
 
       <div class="divider"></div>
 
-      <!-- Q3 -> 2 -->
       <div class="q">3) [Frage hier einfügen]</div>
       <label class="opt"><input type="radio" name="q3" value="A" data-out="1"><div><div>A) [Antworttext]</div><div class="map">→ ergibt: <b>1</b></div></div><div class="right"><span class="tag">A</span></div></label>
       <label class="opt"><input type="radio" name="q3" value="B" data-out="2"><div><div>B) [Antworttext]</div><div class="map">→ ergibt: <b>2</b></div></div><div class="right"><span class="tag">B</span></div></label>
@@ -67,7 +66,6 @@
 
       <div class="divider"></div>
 
-      <!-- Q4 -> 7 -->
       <div class="q">4) [Frage hier einfügen]</div>
       <label class="opt"><input type="radio" name="q4" value="A" data-out="3"><div><div>A) [Antworttext]</div><div class="map">→ ergibt: <b>3</b></div></div><div class="right"><span class="tag">A</span></div></label>
       <label class="opt"><input type="radio" name="q4" value="B" data-out="7"><div><div>B) [Antworttext]</div><div class="map">→ ergibt: <b>7</b></div></div><div class="right"><span class="tag">B</span></div></label>
@@ -75,7 +73,6 @@
 
       <div class="divider"></div>
 
-      <!-- Q5 -> O -->
       <div class="q">5) [Frage hier einfügen]</div>
       <label class="opt"><input type="radio" name="q5" value="A" data-out="O"><div><div>A) [Antworttext]</div><div class="map">→ ergibt: <b>O</b></div></div><div class="right"><span class="tag">A</span></div></label>
       <label class="opt"><input type="radio" name="q5" value="B" data-out="E"><div><div>B) [Antworttext]</div><div class="map">→ ergibt: <b>E</b></div></div><div class="right"><span class="tag">B</span></div></label>
@@ -83,7 +80,6 @@
 
       <div class="divider"></div>
 
-      <!-- Q6 -> k -->
       <div class="q">6) [Frage hier einfügen]</div>
       <label class="opt"><input type="radio" name="q6" value="A" data-out="K"><div><div>A) [Antworttext]</div><div class="map">→ ergibt: <b>K</b></div></div><div class="right"><span class="tag">A</span></div></label>
       <label class="opt"><input type="radio" name="q6" value="B" data-out="k"><div><div>B) [Antworttext]</div><div class="map">→ ergibt: <b>k</b></div></div><div class="right"><span class="tag">B</span></div></label>
@@ -91,7 +87,6 @@
 
       <div class="divider"></div>
 
-      <!-- Q7 -> F -->
       <div class="q">7) [Frage hier einfügen]</div>
       <label class="opt"><input type="radio" name="q7" value="A" data-out="F"><div><div>A) [Antworttext]</div><div class="map">→ ergibt: <b>F</b></div></div><div class="right"><span class="tag">A</span></div></label>
       <label class="opt"><input type="radio" name="q7" value="B" data-out="S"><div><div>B) [Antworttext]</div><div class="map">→ ergibt: <b>S</b></div></div><div class="right"><span class="tag">B</span></div></label>
@@ -99,7 +94,6 @@
 
       <div class="divider"></div>
 
-      <!-- Q8 -> Z -->
       <div class="q">8) [Frage hier einfügen]</div>
       <label class="opt"><input type="radio" name="q8" value="A" data-out="Z"><div><div>A) [Antworttext]</div><div class="map">→ ergibt: <b>Z</b></div></div><div class="right"><span class="tag">A</span></div></label>
       <label class="opt"><input type="radio" name="q8" value="B" data-out="G"><div><div>B) [Antworttext]</div><div class="map">→ ergibt: <b>G</b></div></div><div class="right"><span class="tag">B</span></div></label>
@@ -107,7 +101,6 @@
 
       <div class="divider"></div>
 
-      <!-- Q9 -> Y -->
       <div class="q">9) [Frage hier einfügen]</div>
       <label class="opt"><input type="radio" name="q9" value="A" data-out="Y"><div><div>A) [Antworttext]</div><div class="map">→ ergibt: <b>Y</b></div></div><div class="right"><span class="tag">A</span></div></label>
       <label class="opt"><input type="radio" name="q9" value="B" data-out="C"><div><div>B) [Antworttext]</div><div class="map">→ ergibt: <b>C</b></div></div><div class="right"><span class="tag">B</span></div></label>
@@ -115,7 +108,6 @@
 
       <div class="divider"></div>
 
-      <!-- Q10 -> u -->
       <div class="q">10) [Frage hier einfügen]</div>
       <label class="opt"><input type="radio" name="q10" value="A" data-out="U"><div><div>A) [Antworttext]</div><div class="map">→ ergibt: <b>U</b></div></div><div class="right"><span class="tag">A</span></div></label>
       <label class="opt"><input type="radio" name="q10" value="B" data-out="u"><div><div>B) [Antworttext]</div><div class="map">→ ergibt: <b>u</b></div></div><div class="right"><span class="tag">B</span></div></label>
@@ -123,23 +115,21 @@
 
       <div class="divider"></div>
 
-      <!-- Q11 -> 4 -->
       <div class="q">11) [Frage hier einfügen]</div>
       <label class="opt"><input type="radio" name="q11" value="A" data-out="3"><div><div>A) [Antworttext]</div><div class="map">→ ergibt: <b>3</b></div></div><div class="right"><span class="tag">A</span></div></label>
       <label class="opt"><input type="radio" name="q11" value="B" data-out="4"><div><div>B) [Antworttext]</div><div class="map">→ ergibt: <b>4</b></div></div><div class="right"><span class="tag">B</span></div></label>
       <label class="opt"><input type="radio" name="q11" value="C" data-out="5"><div><div>C) [Antworttext]</div><div class="map">→ ergibt: <b>5</b></div></div><div class="right"><span class="tag">C</span></div></label>
 
       <div class="sticky">
-        <button type="button" onclick="check()">Weiter</button>
+        <button type="button" onclick="build()">Lösungswort zusammensetzen</button>
         <p id="status" class="status"></p>
       </div>
 
       <div id="out" class="hidden">
         <p>Ergebnis: <code id="solutionOut"></code></p>
-        <p id="next" class="hidden">
+        <p id="linkBlock" class="hidden">
           <span class="ok">✅ Richtig!</span><br/>
-          <code>https://www.youtube.com/watch?v= + '{Ergebnis}'</code><br/><br/>
-          <button type="button" onclick="openYT()">YouTube öffnen</button>
+          <a id="finalLink" href="#" target="_blank" rel="noopener"></a>
         </p>
       </div>
     </div>
@@ -148,17 +138,17 @@
   <script>
     const TARGET = "6H27OkFZYu4";
     const YT_BASE = "https://www.youtube.com/watch?v=";
-    let lastSolution = "";
 
     function selectedOut(qName){
       const el = document.querySelector(`input[name="${qName}"]:checked`);
       return el ? (el.dataset.out ?? "") : null;
     }
 
-    function check(){
+    function build(){
       const status = document.getElementById("status");
       const out = document.getElementById("out");
-      const next = document.getElementById("next");
+      const linkBlock = document.getElementById("linkBlock");
+      const finalLink = document.getElementById("finalLink");
 
       const names = [...new Set([...document.querySelectorAll('#quiz input[type="radio"]')].map(x => x.name))];
 
@@ -167,27 +157,29 @@
           status.className = "status no";
           status.textContent = "❌ Bitte alle Fragen beantworten.";
           out.classList.add("hidden");
+          linkBlock.classList.add("hidden");
           return;
         }
       }
 
-      lastSolution = names.map(n => selectedOut(n)).join("");
-      document.getElementById("solutionOut").textContent = lastSolution;
+      const result = names.map(n => selectedOut(n)).join("");
+      document.getElementById("solutionOut").textContent = result;
       out.classList.remove("hidden");
 
-      if (lastSolution === TARGET){
+      if (result === TARGET){
         status.className = "status ok";
         status.textContent = "✅ Korrekt!";
-        next.classList.remove("hidden");
+        const url = YT_BASE + result;
+        finalLink.href = url;
+        finalLink.textContent = url;
+        linkBlock.classList.remove("hidden");
       } else {
         status.className = "status no";
         status.textContent = "❌ Noch nicht korrekt. Prüft eure Auswahl.";
-        next.classList.add("hidden");
+        linkBlock.classList.add("hidden");
+        finalLink.href = "#";
+        finalLink.textContent = "";
       }
-    }
-
-    function openYT(){
-      window.open(YT_BASE + lastSolution, "_blank", "noopener");
     }
   </script>
 </body>
