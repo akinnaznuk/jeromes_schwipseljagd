@@ -3,154 +3,148 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Pubcrawl – Station</title>
-
+  <title>Pubcrawl – Quiz</title>
   <style>
     :root{
-      --bg:#0b0c10;
-      --card:#14161c;
-      --text:#f4f6fb;
-      --muted:#a7afc0;
-      --line:rgba(255,255,255,.10);
-      --good:#35d07f;
-      --bad:#ff4d5a;
-      --btn:#1f2330;
-      --btn2:#2a3042;
-      --radius:18px;
+      --bg:#0b0c10; --card:#14161c; --text:#f4f6fb; --muted:#a7afc0;
+      --line:rgba(255,255,255,.12); --good:#35d07f; --bad:#ff4d5a;
+      --btn:#1f2330; --btn2:#2a3042; --r:18px;
     }
-
     *{box-sizing:border-box}
     body{
-      margin:0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      background: radial-gradient(1200px 600px at 50% -10%, rgba(86,120,255,.35), transparent 60%),
-                  radial-gradient(900px 500px at 30% 0%, rgba(53,208,127,.22), transparent 55%),
+      margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      background: radial-gradient(1100px 600px at 50% -10%, rgba(86,120,255,.35), transparent 60%),
+                  radial-gradient(900px 500px at 30% 0%, rgba(53,208,127,.20), transparent 55%),
                   var(--bg);
-      color:var(--text);
-      line-height:1.45;
+      color:var(--text); line-height:1.45;
     }
-
-    .wrap{max-width:760px;margin:0 auto;padding:18px}
-    header{padding:12px 0 6px}
+    .wrap{max-width:780px;margin:0 auto;padding:18px}
+    header{padding:10px 0 6px}
     h1{font-size:1.35rem;margin:6px 0 4px}
     .sub{color:var(--muted);margin:0 0 10px}
-
     .card{
       background: rgba(20,22,28,.92);
       border:1px solid var(--line);
-      border-radius: var(--radius);
+      border-radius: var(--r);
       padding:16px;
       box-shadow: 0 10px 30px rgba(0,0,0,.35);
       backdrop-filter: blur(6px);
       margin:12px 0;
     }
-
-    .q{
-      margin:14px 0 8px;
-      font-weight:800;
-      font-size:1.02rem;
-    }
-
+    .q{margin:14px 0 8px;font-weight:850;font-size:1.02rem}
     .opt{
-      display:flex;
-      gap:10px;
-      align-items:flex-start;
-      padding:12px 12px;
-      border:1px solid var(--line);
-      border-radius: 14px;
+      display:flex; gap:10px; align-items:flex-start;
+      padding:12px 12px; border:1px solid var(--line); border-radius:14px;
       background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
-      margin:10px 0;
-      cursor:pointer;
-      -webkit-tap-highlight-color: transparent;
-      transition: transform .06s ease, border-color .12s ease, background .12s ease;
+      margin:10px 0; cursor:pointer; -webkit-tap-highlight-color:transparent;
     }
-    .opt:active{transform: scale(.99)}
     .opt input{margin-top:3px; transform: scale(1.2)}
-    .opt:hover{border-color: rgba(255,255,255,.18)}
-    .opt .label{color:var(--text)}
     .opt .tag{
-      margin-left:auto;
-      color:var(--muted);
-      font-size:.85rem;
-      padding:2px 8px;
-      border:1px solid var(--line);
-      border-radius:999px;
-      white-space:nowrap;
+      margin-left:auto; color:var(--muted); font-size:.85rem;
+      padding:2px 8px; border:1px solid var(--line); border-radius:999px; white-space:nowrap;
     }
-
-    button{
-      width:100%;
-      padding:14px 14px;
-      font-size:1rem;
-      font-weight:800;
-      border-radius: 14px;
-      border:1px solid var(--line);
-      background: linear-gradient(180deg, var(--btn2), var(--btn));
-      color:var(--text);
-      cursor:pointer;
-      margin-top:10px;
-    }
-
-    .status{margin:10px 0 0; font-weight:800}
-    .ok{color:var(--good)}
-    .no{color:var(--bad)}
-    code{background:rgba(255,255,255,.08); padding:2px 8px; border-radius:999px}
-    a{color:#b8c7ff; word-break: break-all}
-
-    .hidden{display:none}
     .divider{height:1px;background:var(--line);margin:14px 0}
-
-    /* Optional: Sticky Button auf Mobile */
+    button{
+      width:100%; padding:14px 14px; font-size:1rem; font-weight:850;
+      border-radius:14px; border:1px solid var(--line);
+      background: linear-gradient(180deg, var(--btn2), var(--btn));
+      color:var(--text); cursor:pointer; margin-top:10px;
+    }
     .stickyBar{
-      position: sticky;
-      bottom: 12px;
-      padding-top: 10px;
+      position: sticky; bottom: 12px; padding-top: 10px;
       background: linear-gradient(180deg, transparent, rgba(11,12,16,.85) 40%, rgba(11,12,16,.95));
       backdrop-filter: blur(6px);
     }
+    .status{margin:10px 0 0; font-weight:850}
+    .ok{color:var(--good)} .no{color:var(--bad)}
+    .hidden{display:none}
+    code{background:rgba(255,255,255,.09); padding:2px 8px; border-radius:999px}
+    a{color:#b8c7ff; word-break:break-all}
   </style>
 </head>
 
 <body>
   <div class="wrap">
     <header>
-      <h1>🍻 Schwipseljadg – Station X</h1>
-      <p class="sub">Beantworte alle Fragen. Jede Antwort ergibt ein Zeichen → ergibt das Lösungswort.</p>
+      <h1>🍻 Pubcrawl – Quiz</h1>
+      <p class="sub">Beantwortet alle Fragen. Jede Antwort ergibt ein Zeichen → am Ende entsteht das Lösungswort.</p>
     </header>
 
     <div class="card">
-      <div class="q">1) [Frage hier einfügen]</div>
-      <label class="opt">
-        <input type="radio" name="q1" value="A">
-        <div class="label">A) [Antworttext]</div>
-        <span class="tag">A</span>
-      </label>
-      <label class="opt">
-        <input type="radio" name="q1" value="B">
-        <div class="label">B) [Antworttext]</div>
-        <span class="tag">B</span>
-      </label>
-      <label class="opt">
-        <input type="radio" name="q1" value="C">
-        <div class="label">C) [Antworttext]</div>
-        <span class="tag">C</span>
-      </label>
+      <div class="q">1) Wie viele Buchstaben hat „ZÜRICH“ (Umlaut zählt als 1)?</div>
+      <label class="opt"><input type="radio" name="q1" value="A"><div>A) 5</div><span class="tag">A</span></label>
+      <label class="opt"><input type="radio" name="q1" value="B"><div>B) 6</div><span class="tag">B</span></label>
+      <label class="opt"><input type="radio" name="q1" value="C"><div>C) 7</div><span class="tag">C</span></label>
 
       <div class="divider"></div>
 
-      <div class="q">2) [Frage hier einfügen]</div>
-      <label class="opt"><input type="radio" name="q2" value="A"><div class="label">A) [Antworttext]</div><span class="tag">A</span></label>
-      <label class="opt"><input type="radio" name="q2" value="B"><div class="label">B) [Antworttext]</div><span class="tag">B</span></label>
-      <label class="opt"><input type="radio" name="q2" value="C"><div class="label">C) [Antworttext]</div><span class="tag">C</span></label>
+      <div class="q">2) Womit beginnt „Hauptbahnhof“?</div>
+      <label class="opt"><input type="radio" name="q2" value="A"><div>A) H</div><span class="tag">A</span></label>
+      <label class="opt"><input type="radio" name="q2" value="B"><div>B) B</div><span class="tag">B</span></label>
+      <label class="opt"><input type="radio" name="q2" value="C"><div>C) Z</div><span class="tag">C</span></label>
 
       <div class="divider"></div>
 
-      <div class="q">3) [Frage hier einfügen]</div>
-      <label class="opt"><input type="radio" name="q3" value="A"><div class="label">A) [Antworttext]</div><span class="tag">A</span></label>
-      <label class="opt"><input type="radio" name="q3" value="B"><div class="label">B) [Antworttext]</div><span class="tag">B</span></label>
-      <label class="opt"><input type="radio" name="q3" value="C"><div class="label">C) [Antworttext]</div><span class="tag">C</span></label>
+      <div class="q">3) Welche Zahl ist richtig?</div>
+      <label class="opt"><input type="radio" name="q3" value="A"><div>A) 1</div><span class="tag">A</span></label>
+      <label class="opt"><input type="radio" name="q3" value="B"><div>B) 2</div><span class="tag">B</span></label>
+      <label class="opt"><input type="radio" name="q3" value="C"><div>C) 3</div><span class="tag">C</span></label>
 
-      <!-- Dupliziere Block 4–11 nach Bedarf -->
+      <div class="divider"></div>
+
+      <div class="q">4) Wähle die “Lucky”-Zahl:</div>
+      <label class="opt"><input type="radio" name="q4" value="A"><div>A) 3</div><span class="tag">A</span></label>
+      <label class="opt"><input type="radio" name="q4" value="B"><div>B) 7</div><span class="tag">B</span></label>
+      <label class="opt"><input type="radio" name="q4" value="C"><div>C) 9</div><span class="tag">C</span></label>
+
+      <div class="divider"></div>
+
+      <div class="q">5) Wähle den Buchstaben:</div>
+      <label class="opt"><input type="radio" name="q5" value="A"><div>A) O</div><span class="tag">A</span></label>
+      <label class="opt"><input type="radio" name="q5" value="B"><div>B) E</div><span class="tag">B</span></label>
+      <label class="opt"><input type="radio" name="q5" value="C"><div>C) L</div><span class="tag">C</span></label>
+
+      <div class="divider"></div>
+
+      <div class="q">6) Wähle das einzige <b>kleine</b> Zeichen:</div>
+      <label class="opt"><input type="radio" name="q6" value="A"><div>A) K</div><span class="tag">A</span></label>
+      <label class="opt"><input type="radio" name="q6" value="B"><div>B) k</div><span class="tag">B</span></label>
+      <label class="opt"><input type="radio" name="q6" value="C"><div>C) X</div><span class="tag">C</span></label>
+
+      <div class="divider"></div>
+
+      <div class="q">7) Welcher Buchstabe startet “Feldschlösschen”?</div>
+      <label class="opt"><input type="radio" name="q7" value="A"><div>A) F</div><span class="tag">A</span></label>
+      <label class="opt"><input type="radio" name="q7" value="B"><div>B) S</div><span class="tag">B</span></label>
+      <label class="opt"><input type="radio" name="q7" value="C"><div>C) L</div><span class="tag">C</span></label>
+
+      <div class="divider"></div>
+
+      <div class="q">8) Welche Abkürzung steht für Zürich?</div>
+      <label class="opt"><input type="radio" name="q8" value="A"><div>A) ZH</div><span class="tag">A</span></label>
+      <label class="opt"><input type="radio" name="q8" value="B"><div>B) GE</div><span class="tag">B</span></label>
+      <label class="opt"><input type="radio" name="q8" value="C"><div>C) BE</div><span class="tag">C</span></label>
+
+      <div class="divider"></div>
+
+      <div class="q">9) Welche der folgenden ist ein einzelner Buchstabe?</div>
+      <label class="opt"><input type="radio" name="q9" value="A"><div>A) Y</div><span class="tag">A</span></label>
+      <label class="opt"><input type="radio" name="q9" value="B"><div>B) CH</div><span class="tag">B</span></label>
+      <label class="opt"><input type="radio" name="q9" value="C"><div>C) ZH</div><span class="tag">C</span></label>
+
+      <div class="divider"></div>
+
+      <div class="q">10) Wähle das einzige <b>kleine</b> Zeichen:</div>
+      <label class="opt"><input type="radio" name="q10" value="A"><div>A) U</div><span class="tag">A</span></label>
+      <label class="opt"><input type="radio" name="q10" value="B"><div>B) u</div><span class="tag">B</span></label>
+      <label class="opt"><input type="radio" name="q10" value="C"><div>C) V</div><span class="tag">C</span></label>
+
+      <div class="divider"></div>
+
+      <div class="q">11) Wie viele Ecken hat ein Quadrat?</div>
+      <label class="opt"><input type="radio" name="q11" value="A"><div>A) 3</div><span class="tag">A</span></label>
+      <label class="opt"><input type="radio" name="q11" value="B"><div>B) 4</div><span class="tag">B</span></label>
+      <label class="opt"><input type="radio" name="q11" value="C"><div>C) 5</div><span class="tag">C</span></label>
 
       <div class="stickyBar">
         <button onclick="check()">Weiter</button>
@@ -172,13 +166,19 @@
     const TARGET = "6H27OkFZYu4";
     const YT_BASE = "https://www.youtube.com/watch?v=";
 
-    // Mapping pro Frage: A/B/C -> Zeichen (Zahl/Buchstabe)
-    // Beispiel: q1: {A:"5", B:"6", C:"7"}
+    // Mapping pro Frage: A/B/C -> Zeichen (ergibt am Ende TARGET)
     const MAP = {
-      q1: {A:"", B:"", C:""},
-      q2: {A:"", B:"", C:""},
-      q3: {A:"", B:"", C:""},
-      // q4 ... q11 bei Bedarf ergänzen
+      q1:  {A:"5", B:"6", C:"7"},
+      q2:  {A:"H", B:"B", C:"Z"},
+      q3:  {A:"1", B:"2", C:"3"},
+      q4:  {A:"3", B:"7", C:"9"},
+      q5:  {A:"O", B:"E", C:"L"},
+      q6:  {A:"K", B:"k", C:"X"},
+      q7:  {A:"F", B:"S", C:"L"},
+      q8:  {A:"Z", B:"G", C:"B"},
+      q9:  {A:"Y", B:"C", C:"Z"},
+      q10: {A:"U", B:"u", C:"V"},
+      q11: {A:"3", B:"4", C:"5"}
     };
 
     function pick(name){
@@ -191,10 +191,8 @@
       const out = document.getElementById("out");
       const next = document.getElementById("next");
 
-      // Liste aller Fragen automatisch aus MAP-Schlüsseln
-      const keys = Object.keys(MAP);
-      for (const k of keys){
-        if (!pick(k)){
+      for (let i=1;i<=11;i++){
+        if(!pick("q"+i)){
           status.className = "status no";
           status.textContent = "❌ Bitte alle Fragen beantworten.";
           out.classList.add("hidden");
@@ -202,7 +200,11 @@
         }
       }
 
-      const solution = keys.map(k => MAP[k][pick(k)] ?? "").join("");
+      const solution = Array.from({length:11}, (_,idx)=>{
+        const k = "q"+(idx+1);
+        return MAP[k][pick(k)] ?? "";
+      }).join("");
+
       document.getElementById("solutionOut").textContent = solution;
       out.classList.remove("hidden");
 
