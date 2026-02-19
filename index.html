@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pubcrawl – Station</title>
+
+  <style>
+    :root{
+      --bg:#0b0c10;
+      --card:#14161c;
+      --text:#f4f6fb;
+      --muted:#a7afc0;
+      --line:rgba(255,255,255,.10);
+      --good:#35d07f;
+      --bad:#ff4d5a;
+      --btn:#1f2330;
+      --btn2:#2a3042;
+      --radius:18px;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(1200px 600px at 50% -10%, rgba(86,120,255,.35), transparent 60%),
+                  radial-gradient(900px 500px at 30% 0%, rgba(53,208,127,.22), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.45;
+    }
+
+    .wrap{max-width:760px;margin:0 auto;padding:18px}
+    header{padding:12px 0 6px}
+    h1{font-size:1.35rem;margin:6px 0 4px}
+    .sub{color:var(--muted);margin:0 0 10px}
+
+    .card{
+      background: rgba(20,22,28,.92);
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      padding:16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.35);
+      backdrop-filter: blur(6px);
+      margin:12px 0;
+    }
+
+    .q{
+      margin:14px 0 8px;
+      font-weight:800;
+      font-size:1.02rem;
+    }
+
+    .opt{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      padding:12px 12px;
+      border:1px solid var(--line);
+      border-radius: 14px;
+      background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
+      margin:10px 0;
+      cursor:pointer;
+      -webkit-tap-highlight-color: transparent;
+      transition: transform .06s ease, border-color .12s ease, background .12s ease;
+    }
+    .opt:active{transform: scale(.99)}
+    .opt input{margin-top:3px; transform: scale(1.2)}
+    .opt:hover{border-color: rgba(255,255,255,.18)}
+    .opt .label{color:var(--text)}
+    .opt .tag{
+      margin-left:auto;
+      color:var(--muted);
+      font-size:.85rem;
+      padding:2px 8px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      white-space:nowrap;
+    }
+
+    button{
+      width:100%;
+      padding:14px 14px;
+      font-size:1rem;
+      font-weight:800;
+      border-radius: 14px;
+      border:1px solid var(--line);
+      background: linear-gradient(180deg, var(--btn2), var(--btn));
+      color:var(--text);
+      cursor:pointer;
+      margin-top:10px;
+    }
+
+    .status{margin:10px 0 0; font-weight:800}
+    .ok{color:var(--good)}
+    .no{color:var(--bad)}
+    code{background:rgba(255,255,255,.08); padding:2px 8px; border-radius:999px}
+    a{color:#b8c7ff; word-break: break-all}
+
+    .hidden{display:none}
+    .divider{height:1px;background:var(--line);margin:14px 0}
+
+    /* Optional: Sticky Button auf Mobile */
+    .stickyBar{
+      position: sticky;
+      bottom: 12px;
+      padding-top: 10px;
+      background: linear-gradient(180deg, transparent, rgba(11,12,16,.85) 40%, rgba(11,12,16,.95));
+      backdrop-filter: blur(6px);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <h1>🍻 Schwipseljadg – Station X</h1>
+      <p class="sub">Beantworte alle Fragen. Jede Antwort ergibt ein Zeichen → ergibt das Lösungswort.</p>
+    </header>
+
+    <div class="card">
+      <div class="q">1) [Frage hier einfügen]</div>
+      <label class="opt">
+        <input type="radio" name="q1" value="A">
+        <div class="label">A) [Antworttext]</div>
+        <span class="tag">A</span>
+      </label>
+      <label class="opt">
+        <input type="radio" name="q1" value="B">
+        <div class="label">B) [Antworttext]</div>
+        <span class="tag">B</span>
+      </label>
+      <label class="opt">
+        <input type="radio" name="q1" value="C">
+        <div class="label">C) [Antworttext]</div>
+        <span class="tag">C</span>
+      </label>
+
+      <div class="divider"></div>
+
+      <div class="q">2) [Frage hier einfügen]</div>
+      <label class="opt"><input type="radio" name="q2" value="A"><div class="label">A) [Antworttext]</div><span class="tag">A</span></label>
+      <label class="opt"><input type="radio" name="q2" value="B"><div class="label">B) [Antworttext]</div><span class="tag">B</span></label>
+      <label class="opt"><input type="radio" name="q2" value="C"><div class="label">C) [Antworttext]</div><span class="tag">C</span></label>
+
+      <div class="divider"></div>
+
+      <div class="q">3) [Frage hier einfügen]</div>
+      <label class="opt"><input type="radio" name="q3" value="A"><div class="label">A) [Antworttext]</div><span class="tag">A</span></label>
+      <label class="opt"><input type="radio" name="q3" value="B"><div class="label">B) [Antworttext]</div><span class="tag">B</span></label>
+      <label class="opt"><input type="radio" name="q3" value="C"><div class="label">C) [Antworttext]</div><span class="tag">C</span></label>
+
+      <!-- Dupliziere Block 4–11 nach Bedarf -->
+
+      <div class="stickyBar">
+        <button onclick="check()">Weiter</button>
+        <p id="status" class="status"></p>
+      </div>
+
+      <div id="out" class="hidden">
+        <p>Ergebnis: <code id="solutionOut"></code></p>
+        <p id="next" class="hidden">
+          <span class="ok">✅ Richtig!</span> Nächster Hint (YouTube):<br/>
+          <a id="ytLink" target="_blank" rel="noopener"></a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Ziel-Lösungswort (YouTube Video-ID)
+    const TARGET = "6H27OkFZYu4";
+    const YT_BASE = "https://www.youtube.com/watch?v=";
+
+    // Mapping pro Frage: A/B/C -> Zeichen (Zahl/Buchstabe)
+    // Beispiel: q1: {A:"5", B:"6", C:"7"}
+    const MAP = {
+      q1: {A:"", B:"", C:""},
+      q2: {A:"", B:"", C:""},
+      q3: {A:"", B:"", C:""},
+      // q4 ... q11 bei Bedarf ergänzen
+    };
+
+    function pick(name){
+      const el = document.querySelector(`input[name="${name}"]:checked`);
+      return el ? el.value : null;
+    }
+
+    function check(){
+      const status = document.getElementById("status");
+      const out = document.getElementById("out");
+      const next = document.getElementById("next");
+
+      // Liste aller Fragen automatisch aus MAP-Schlüsseln
+      const keys = Object.keys(MAP);
+      for (const k of keys){
+        if (!pick(k)){
+          status.className = "status no";
+          status.textContent = "❌ Bitte alle Fragen beantworten.";
+          out.classList.add("hidden");
+          return;
+        }
+      }
+
+      const solution = keys.map(k => MAP[k][pick(k)] ?? "").join("");
+      document.getElementById("solutionOut").textContent = solution;
+      out.classList.remove("hidden");
+
+      if (solution === TARGET){
+        status.className = "status ok";
+        status.textContent = "✅ Korrekt!";
+        const url = YT_BASE + TARGET;
+        const a = document.getElementById("ytLink");
+        a.href = url;
+        a.textContent = url;
+        next.classList.remove("hidden");
+      } else {
+        status.className = "status no";
+        status.textContent = "❌ Noch nicht korrekt. Prüft eure Auswahl.";
+        next.classList.add("hidden");
+      }
+    }
+  </script>
+</body>
+</html>
