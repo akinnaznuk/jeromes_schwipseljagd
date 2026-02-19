@@ -42,14 +42,14 @@
 <body>
   <div class="wrap">
     <h1>🍻 Jérôme's Schwipseljagd – Quiz</h1>
-    <p class="sub">Wähle bei jeder Frage eine Antwort. Danach wird dein <b>Code</b> angezeigt. Erst dann kannst du den Link zusammensetzen.</p>
+    <p class="sub">Mal luege wie guet du eus wüki kennsch ;) Jetzt musch di bewiese. Wähl für jedi Frag die richtig Antwort, nur denn chunnsch zum nächste Hint. </p>
 
     <div class="card" id="quiz">
 
-      <div class="q">1) Wie alt ist Nici?</div>
-      <label class="opt"><input type="radio" name="q1" value="A" data-out="4"><div><div>A) 80</div><div class="map">codeziffer → <b>4</b></div></div><div class="right"><span class="tag">A</span></div></label>
-      <label class="opt"><input type="radio" name="q1" value="B" data-out="5"><div><div>B) 31</div><div class="map">codeziffer → <b>5</b></div></div><div class="right"><span class="tag">B</span></div></label>
-      <label class="opt"><input type="radio" name="q1" value="C" data-out="6"><div><div>C) 30</div><div class="map">codeziffer → <b>6</b></div></div><div class="right"><span class="tag">C</span></div></label>
+      <div class="q">1) Was isch lutem Nici es usprägts Merkmal vode Annika?</div>
+      <label class="opt"><input type="radio" name="q1" value="A" data-out="4"><div><div>A) Riese Bizeps</div><div class="map">codeziffer → <b>4</b></div></div><div class="right"><span class="tag">A</span></div></label>
+      <label class="opt"><input type="radio" name="q1" value="B" data-out="5"><div><div>B) Lange Hals</div><div class="map">codeziffer → <b>5</b></div></div><div class="right"><span class="tag">B</span></div></label>
+      <label class="opt"><input type="radio" name="q1" value="C" data-out="6"><div><div>C) Krummi Knüschiebe</div><div class="map">codeziffer → <b>6</b></div></div><div class="right"><span class="tag">C</span></div></label>
 
       <div class="divider"></div>
 
@@ -122,20 +122,20 @@
       <label class="opt"><input type="radio" name="q11" value="C" data-out="5"><div><div>C) [Antworttext]</div><div class="map">codeziffer → <b>5</b></div></div><div class="right"><span class="tag">C</span></div></label>
 
       <div class="sticky">
-        <button type="button" onclick="evaluateQuiz()">Antworten auswerten</button>
+        <button type="button" onclick="evaluateQuiz()">Antworte uswerte</button>
         <p id="status" class="status"></p>
       </div>
 
       <div id="step1" class="hidden">
         <p>Dein Code: <code id="codeOut"></code></p>
         <p>Link-String: <code id="linkStringOut"></code></p>
-        <button id="buildBtn" type="button" class="hidden" onclick="buildLink()">Link zusammensetzen</button>
+        <button id="buildBtn" type="button" class="hidden" onclick="buildLink()">Link zämmesetze</button>
       </div>
 
       <div id="step2" class="hidden">
-        <p><span class="ok">✅ Fertig.</span> Hier ist dein Link:</p>
+        <p><span class="ok">✅ Fertig.</span> Da isch din Link:</p>
         <a id="finalLink" href="#" target="_blank" rel="noopener"></a>
-        <p class="hint">Hint: Das Video verrät dir, wo sich die nächste Bar befindet. Wo genau jedoch verraten dir die Comments (also schau genau hin ;))</p>
+        <p class="hint">Hint: S Video verratet der, wo sich die nächsti Bar befindet. Wo genau aber? Lueg doch mal i die immer so informative Comments ;)</p>
       </div>
     </div>
   </div>
@@ -165,7 +165,7 @@
       for (const n of names){
         if (selectedOut(n) === null){
           status.className = "status no";
-          status.textContent = "❌ Du musst alle Fragen beantworten.";
+          status.textContent = "❌ Du musch alli Fragen beantworte du Löli.";
           return;
         }
       }
@@ -177,11 +177,11 @@
 
       if (lastCode === TARGET_CODE){
         status.className = "status ok";
-        status.textContent = "✅ Dein Code stimmt. Jetzt kannst du den Link zusammensetzen.";
+        status.textContent = "✅ De Code stimmt. Jetzt chasch de Link zämmensetze.";
         buildBtn.classList.remove("hidden");
       } else {
         status.className = "status no";
-        status.textContent = "❌ Dein Code stimmt noch nicht. Versuch’s nochmal.";
+        status.textContent = "❌ De Code stimmt nani - schwaaaach. Versuch’s nomal.";
       }
     }
 
